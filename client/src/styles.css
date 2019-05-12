@@ -1,0 +1,123 @@
+/* import font(s) */
+@import url("https://fonts.googleapis.com/css?family=Allerta+Stencil|Source+Code+Pro:900");
+
+/* detail root variables */
+:root {
+  --font-serif: "Allerta Stencil", sans-serif;
+  --font-mono: "Source Code Pro", monospace;
+  --color-text: #efeee7;
+  --color-bg: #223458;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: var(--font-serif);
+  color: var(--color-text);
+  /* atop a solid background add the SVG pattern, on both sides of the page */
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26.458 26.458" opacity="0.1"><g transform="translate(2.646 -273.187)"><ellipse cx="3.509" cy="287.754" rx="2.603" ry="2.588" fill="none" stroke="%23fff" stroke-width="1.812" stroke-linecap="round" paint-order="stroke fill markers"/><g transform="matrix(.29742 .1707 -.17171 .29567 36.105 196.22)" fill="%23fff"><rect ry=".794" rx=".794" y="238.843" x="52.118" height="23.813" width="5.292" paint-order="stroke fill markers"/><rect transform="rotate(90)" width="5.292" height="23.813" x="248.104" y="-66.67" rx=".794" ry=".794" paint-order="stroke fill markers"/></g><g transform="matrix(.29742 -.1707 .17171 .29567 -48.452 228.336)" fill="%23fff"><rect width="5.292" height="23.813" x="52.118" y="238.843" rx=".794" ry=".794" paint-order="stroke fill markers"/><rect ry=".794" rx=".794" y="-66.67" x="248.104" height="23.813" width="5.292" transform="rotate(90)" paint-order="stroke fill markers"/></g><ellipse cy="285.947" cx="17.658" rx="2.603" ry="2.588" fill="none" stroke="%23fff" stroke-width="1.812" stroke-linecap="round" paint-order="stroke fill markers"/></g></svg>'),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26.458 26.458" opacity="0.1"><g transform="translate(2.646 -273.187)"><ellipse cx="3.509" cy="287.754" rx="2.603" ry="2.588" fill="none" stroke="%23fff" stroke-width="1.812" stroke-linecap="round" paint-order="stroke fill markers"/><g transform="matrix(.29742 .1707 -.17171 .29567 36.105 196.22)" fill="%23fff"><rect ry=".794" rx=".794" y="238.843" x="52.118" height="23.813" width="5.292" paint-order="stroke fill markers"/><rect transform="rotate(90)" width="5.292" height="23.813" x="248.104" y="-66.67" rx=".794" ry=".794" paint-order="stroke fill markers"/></g><g transform="matrix(.29742 -.1707 .17171 .29567 -48.452 228.336)" fill="%23fff"><rect width="5.292" height="23.813" x="52.118" y="238.843" rx=".794" ry=".794" paint-order="stroke fill markers"/><rect ry=".794" rx=".794" y="-66.67" x="248.104" height="23.813" width="5.292" transform="rotate(90)" paint-order="stroke fill markers"/></g><ellipse cy="285.947" cx="17.658" rx="2.603" ry="2.588" fill="none" stroke="%23fff" stroke-width="1.812" stroke-linecap="round" paint-order="stroke fill markers"/></g></svg>'),
+    var(--color-bg);
+  background-repeat: repeat-y;
+  background-size: 250px, 250px, 100%;
+  background-position-x: calc(100% + 50px), -50px, 0;
+  background-position-y: calc(100% + 100px), -50px, 0;
+  /* display the content in a single column, horizontally centered1 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+}
+/* global properties */
+h1 {
+  margin-top: 50px;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 3rem;
+}
+p {
+  line-height: 3;
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+  text-align: center;
+}
+
+
+.Board {
+  /* for the board create a grid of 9 squares, in three columns and rows */
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  grid-gap: 2px;
+  margin: 1rem 0 2rem;
+}
+
+
+.Square {
+  font-family: var(--font-mono);
+  font-size: 3rem;
+  font-weight: 900;
+  border: 3px solid var(--color-bg);
+  background: var(--color-text);
+  color: var(--color-bg);
+  opacity: 0.9;
+
+  /* transition for the hover and active states */
+  transition: all 0.2s ease-out;
+}
+/* on hover slightly increase the size of the square */
+.Square:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+/* when active decrease the size of the square */
+.Square:active {
+  opacity: 1;
+  transform: scale(0.9);
+}
+
+
+/* center the text in the restart component */
+.restart{
+  text-align: center;
+  visibility: hidden;
+}
+
+.restart p{
+  font-size: 0rem;
+}
+
+.restart button{
+  font-size: 1rem;
+  color: var(--color-text);
+  background: none;
+  border: 2px solid var(--color-text);
+  border-radius: 4px;
+  font-weight: 300;
+  padding: 0.25rem 1rem;
+  margin: 0.5rem 0;
+  font-family: var(--font);
+  transition: all 0.2s ease-out;
+}
+
+.restart button:hover{
+  color: var(--color-bg);
+  border: 2px dashed var(--color-bg);
+  box-shadow: 0 0 0 4px var(--color-text);
+  background: var(--color-text);
+}
+
+.unhidden{
+  visibility:visible;
+}
+.unhidden p{
+  font-size: 2rem;
+  transition: 0.5s ease-out;
+}
