@@ -27,7 +27,7 @@ A web-based tic tac toe that can allow users to play with other players online.
 
 * I reference css by this page : (https://codepen.io/borntofrappe/pen/rQGyxm) and use the components and containers model. But I rewrite some function to apply to my own project. 
 * Added backend code, use socket.io to make it into a mutiplayer online game.
-* Added a lot of condition, so that it can know who is the player who is spectator. Thus, only player can click the board. 
+* Added a lot of conditional statements, so that it can know who is the player who is spectator. Thus, only player can click the board. 
 
 
 ### Reflection
