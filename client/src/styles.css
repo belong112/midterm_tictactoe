@@ -41,6 +41,12 @@ h1 {
   font-weight: 300;
   font-size: 3rem;
 }
+h2 {
+  margin-top: 20px;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 2rem;
+}
 p {
   line-height: 3;
   font-size: 1.5rem;
@@ -48,7 +54,14 @@ p {
   letter-spacing: 0.1rem;
   text-align: center;
 }
+div{
+  text-align: center;
+}
 
+.Game{
+  display: flex;
+  justify-content: space-around;
+}
 
 .Board {
   /* for the board create a grid of 9 squares, in three columns and rows */
@@ -59,6 +72,10 @@ p {
   margin: 1rem 0 2rem;
 }
 
+.counter{
+  font-size: 3rem;
+  margin: 0px 50px 0px 50px;
+}
 
 .Square {
   font-family: var(--font-mono);
@@ -120,4 +137,8 @@ p {
 .unhidden p{
   font-size: 2rem;
   transition: 0.5s ease-out;
+}
+
+.underline{
+  text-decoration: underline red; 
 }

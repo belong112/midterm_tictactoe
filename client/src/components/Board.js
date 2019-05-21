@@ -16,7 +16,6 @@ class Board extends React.Component {
         />
       );
     })
-    console.log(squ)
     return(
       <div className = "Board">
         {squ}
